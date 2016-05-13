@@ -27,44 +27,6 @@ CREATE TABLE IF NOT EXISTS `admin_user` (
 -- --------------------------------------------------------
 
 -- 
--- Table structure for table `currency_config`
--- 
-
-CREATE TABLE IF NOT EXISTS `currency_config` (
-  `currency_id` int(11) NOT NULL AUTO_INCREMENT,
-  `country` varchar(100) NOT NULL,
-  `currency` varchar(255) NOT NULL,
-  `symbol` varchar(80) NOT NULL,
-  `img_file` varchar(300) NOT NULL,
-  `displays` tinyint(4) NOT NULL DEFAULT '99',
-  `decimal_no` tinyint(4) NOT NULL DEFAULT '0',
-  `active` tinyint(4) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`currency_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
--- 
--- Table structure for table `currency_post`
--- 
-
-CREATE TABLE IF NOT EXISTS `currency_post` (
-  `post_id` int(11) NOT NULL AUTO_INCREMENT,
-  `currency_id` int(11) NOT NULL,
-  `rate` decimal(20,4) NOT NULL,
-  `location` text NOT NULL,
-  `address` varchar(500) NOT NULL,
-  `post_date` int(11) NOT NULL,
-  `post_by` int(11) NOT NULL,
-  `remark` varchar(500) NOT NULL,
-  `is_status` tinyint(4) NOT NULL DEFAULT '0',
-  `active` tinyint(4) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`post_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
--- 
 -- Table structure for table `user`
 -- 
 
@@ -80,16 +42,4 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2275 DEFAULT CHARSET=utf8 AUTO_INCREMENT=2275 ;
 
--- --------------------------------------------------------
 
--- 
--- Table structure for table `user_address`
--- 
-
-CREATE TABLE IF NOT EXISTS `user_address` (
-  `uaddress_id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `uaddress` varchar(500) NOT NULL,
-  `active` tinyint(4) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`uaddress_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
